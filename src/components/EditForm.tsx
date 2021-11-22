@@ -23,7 +23,7 @@ const MovieModel = Joi.object({
 	runtime: Joi.number().integer().min(1).required(),
 }).prefs({ convert: false, abortEarly: false })
 
-type FormValues = {
+export type FormValues = {
 	[key in 'title' | 'poster_path' | 'overview' | 'runtime' | 'vote_average' | 'release_date']: string
 } & {
 	[key in 'genres']: string[]
@@ -39,6 +39,7 @@ export const EditForm = () => {
 	const router = useRouter()
 	const modal = useSelector(selectModal)
 	const id = useSelector(selectAppID)
+	const movie = useSelector(selectMovieByID)
 	const initialValues: FormValues = {
 		title: '',
 		poster_path: '',
@@ -50,7 +51,6 @@ export const EditForm = () => {
 	}
 
 	if (modal === 'edit') {
-		const movie = useSelector(selectMovieByID)
 		for (const key in movie) {
 			if (key === 'genres') {
 				initialValues[key] = movie[key]
