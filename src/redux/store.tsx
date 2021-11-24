@@ -14,6 +14,7 @@ export const makeStore = () => configureStore({
 	}
 })
 
+export const store = makeStore()
 export type RootStore = ReturnType<typeof makeStore>
 export type RootState = ReturnType<RootStore['getState']>
 export type AppDispatch = ReturnType<RootStore['dispatch']>

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import arrowSelect from '../assets/arrow-select.svg'
+import arrowSelect from '../../public/arrow-select.svg'
 
 export const SortSelectWrapper = styled.div`
 	position: relative;

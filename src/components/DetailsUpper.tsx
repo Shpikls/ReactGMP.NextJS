@@ -1,8 +1,9 @@
 import {DetailsUpperWrapper} from "./DetailsUpperWrapper";
 import {Logo} from "./Logo";
 import {DetailsUpperButton} from "./DetailsUpperButton";
-import searchButton from '../assets/search-button.svg'
+import searchButton from '../../public/search-button.svg'
 import {useRouter} from "next/dist/client/router";
+import Image from 'next/image'
 
 export const DetailsUpper = () => {
 	const router = useRouter()
@@ -21,7 +22,7 @@ export const DetailsUpper = () => {
 			<DetailsUpperWrapper>
 				<Logo/>
 				<DetailsUpperButton onClick={handleClick}>
-					<img style={{float: "left"}} src={searchButton.src} alt="back to search"/>
+					<Image src={searchButton} alt="back to search"/>
 				</DetailsUpperButton>
 			</DetailsUpperWrapper>
 		</>

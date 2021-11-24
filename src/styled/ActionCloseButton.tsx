@@ -7,6 +7,7 @@ export const ActionCloseButton = styled.button`
 	position: absolute;
 	top: 6px;
 	right: 10px;
+	cursor: pointer;
 
 	img {
 		float: left;

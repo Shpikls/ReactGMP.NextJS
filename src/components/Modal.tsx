@@ -1,7 +1,8 @@
 import React from 'react'
 import { useEffect } from 'react'
 import styled from 'styled-components'
-import modalCloseButton from '../assets/modal-close-button.svg'
+import modalCloseButton from '../../public/modal-close-button.svg'
+import Img from 'next/image'
 
 type PropsModal = {
 	isOpen?: boolean
@@ -30,14 +31,14 @@ export const Modal = ({ isOpen, children, closeModalHandler }: PropsModal): JSX.
 		return () => {
 			document.removeEventListener('keydown', listener)
 		}
-	}, [])
+	}, [closeModalHandler])
 
 	if (isOpen) {
 		return (
 			<ModalWrapper>
 				<ModalWindow>
 					<ModalClose>
-						<Img src={modalCloseButton.src} alt="modal close button" onClick={closeModalHandler} />
+						<Img src={modalCloseButton} alt="modal close button" onClick={closeModalHandler} />
 					</ModalClose>
 					{children}
 				</ModalWindow>
@@ -83,8 +84,4 @@ const ModalClose = styled.button`
 	padding: 0;
 	background-color: transparent;
 	border: none;
-`
-
-const Img = styled.img`
-	float: left;
 `
