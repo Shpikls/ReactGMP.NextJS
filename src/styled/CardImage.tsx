@@ -1,10 +1,9 @@
 import styled from "styled-components";
+import Image from 'next/image'
 
-export const CardImage = styled.img`
+export const CardImage = styled(Image)`
 	cursor: pointer;
 	float: left;
 	user-drag: none;
-	width: 322px;
-	height: 483px;
 	object-fit: cover;
 `

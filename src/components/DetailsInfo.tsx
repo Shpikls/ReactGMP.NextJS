@@ -18,7 +18,7 @@ export const DetailsInfo = () => {
 				<DetailsInfoTitle>{movie.title}</DetailsInfoTitle>
 				<DetailsInfoRating>{movie.vote_average}</DetailsInfoRating>
 			</DetailsInfoTitleWrapper>
-			<DetailsInfoGenre>{movie.genres.toString()}</DetailsInfoGenre>
+			<DetailsInfoGenre>{movie.genres && movie.genres.toString()}</DetailsInfoGenre>
 			<DetailsInfoSecondWrapper>
 				<DetailsInfoYear>{movie.release_date}</DetailsInfoYear>
 				<DetailsInfoDurations>{movie.runtime} m</DetailsInfoDurations>

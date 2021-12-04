@@ -70,7 +70,7 @@ export const GenreInput = (): JSX.Element => {
 	useEffect(() => {
 		const innerIsEmpty = field.value.length > 0
 		if (isEmpty !== innerIsEmpty) setIsEmpty(innerIsEmpty)
-	}, [field.value])
+	}, [field.value, isEmpty])
 
 	return (
 		<GenreWrapper ref={genreRef}>

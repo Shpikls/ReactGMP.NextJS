@@ -10,6 +10,7 @@ export const Action = styled.button<{show: boolean}>`
 	padding: 0;
 	background-color: transparent;
 	display: none;
+	cursor: pointer;
 
 	&:hover,
 	&:focus {

@@ -3,15 +3,16 @@ import {CardImageWrapper} from "../styled/CardImageWrapper";
 import {CardButton} from "../styled/CardButton";
 import {CardImage} from "../styled/CardImage";
 import {Actions} from "./Actions";
-import notFound from "../assets/notfound.png"
+import notFound from "../../public/notfound.png"
 import {Description} from "./Description";
-import React from "react";
+import React, {useState} from "react";
 import { Movie } from "../types/Movie";
 import Link from 'next/link'
 import {useRouter} from "next/dist/client/router";
 
 export const Card: React.FC<{movie: Movie}> = ({movie}) => {
 	const router = useRouter()
+	const [imgSrc, setImgSrc] = useState(movie.poster_path || notFound.src)
 
 	return (
 		<CardWrapper>
@@ -28,12 +29,13 @@ export const Card: React.FC<{movie: Movie}> = ({movie}) => {
 				>
 					<CardButton>
 						<CardImage
-							src={movie.poster_path}
+							src={imgSrc}
 							alt={movie.title}
-							onError={(e) => {
-								(e.target as HTMLImageElement).onerror = null;
-								(e.target as HTMLImageElement).src = `${notFound.src}`
+							onError={() => {
+								setImgSrc(notFound.src)
 							}}
+							width={322}
+							height={483}
 						/>
 					</CardButton>
 				</Link>
